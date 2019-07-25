@@ -6,21 +6,35 @@
 // ======================================
 // Additional Styles
 // ======================================
-body {
-  color: $textColor;
+html {
+  color: $lightText;
   font-family: $myFont;
   font-weight: 100;
   margin: 0;
-}
 
-h1, h2, h3 {
-  text-transform: uppercase;
-  font-family: $myFont;
+  a {
+    color: $linkColor;
+    transition: all 0.2s;
+      &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+      }
+  }
+
+  h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: $myFont;
+    color: $lightText;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 // main container
 .main-container {
-  color: $textColor;
+  color: $lightText;
   position: relative;
   height: 100%;
   width: 100%;
@@ -45,7 +59,7 @@ h1, h2, h3 {
 
 // main container
 .berat-container {
-  color: $textColor;
+  color: $lightText;
   position: relative;
   height: 100%;
   width: 100%;
@@ -84,11 +98,11 @@ h1, h2, h3 {
   a {
     font-family: $myFont;
     font-size: 1.2rem;
-    color: $textColor;
+    color: $lightText;
     padding: 0rem 1.5rem 0rem 1.5rem;
 
     &:hover {
-      color: $textColor;
+      color: $lightText;
       opacity: 0.8;
       text-decoration: none;
     }
@@ -125,7 +139,7 @@ h1, h2, h3 {
   height: 600px;
 
   a {
-    color: $textColor;
+    color: $lightText;
     font-size: 2rem;
 
     &:hover {
@@ -142,34 +156,37 @@ h1, h2, h3 {
 // left post
 .left-post {
   margin: 0rem 0rem 1.5rem 1.5rem;
-  a {
+    p {
+      font-size: 1rem;
+    }
+  /*a {
     font-family: $myFont;
-    color: $secondaryColor;
-    border: 2px solid $primaryColor;
+    color: $linkColor;
+    border: 2px solid $linkColor;
     border-radius: 0.3rem;
     padding: 0.7rem 1.2rem 0.7rem 1.2rem;
-    transition: all 0.2s;
+    transition: ease-in 0.2s;
   
     &:hover {
-      color: $textColor;
+      color: $lightText;
       background-color: $primaryColor;
+      border: 2px solid $primaryColor;
       opacity: 0.8;
       text-decoration: none;
     }
-  }
+  }*/
 }
 
 //post
 .post {
 
   h1, h2, h3 {
-    color: $textColor2;
-    padding: 2rem 7rem 2rem 7rem;
     text-align: center;
+    color: $darkText;
+    padding: 2rem 7rem 2rem 7rem;
   }
 
   p {
-    font-size: 1.2rem;
     padding: 1rem 7rem 0rem 7rem;
   }
 }
