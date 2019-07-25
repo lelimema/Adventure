@@ -1,0 +1,178 @@
+
+
+
+
+$primaryColor: #006666;
+$secondaryColor: #00cccc;
+$textColor: #fff;
+$textColor2: #363839;
+$myFont: 'Nanum Gothic', sans-serif;
+
+
+body {
+  color: $textColor;
+  font-family: $myFont;
+  font-weight: 100;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-family: $myFont;
+}
+
+// main container
+.main-container {
+  color: $textColor;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &::after {
+    content: '';
+    //background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(8).jpg');
+    background-image: url('/dist/img/image01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    opacity: 1;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// main container
+.berat-container {
+  color: $textColor;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &::after {
+    content: '';
+    //background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(8).jpg');
+    background-image: url('/dist/img/image02.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// navigation bar
+.navbar {
+  font-weight: 100;
+  height: 4rem;
+  align-items: center;
+  background-color: rgba($primaryColor, 0.5);
+
+  &::after {
+    content: '';
+    background-color: $primaryColor;
+    opacity: 0.5;
+  }
+
+  a {
+    font-family: $myFont;
+    font-size: 1.2rem;
+    color: $textColor;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+
+    &:hover {
+      color: $textColor;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+
+  .fa-search {
+    padding: 0rem 1rem 0rem 0rem;
+  }
+}
+
+// title
+.my-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 600px;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 3rem;
+    word-spacing: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.social {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 600px;
+
+  a {
+    color: $textColor;
+    font-size: 2rem;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  li {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+// left post
+.left-post {
+  margin: 0rem 0rem 1.5rem 1.5rem;
+  a {
+    font-family: $myFont;
+    color: $textColor;
+    border: 2px solid $primaryColor;
+    border-radius: 0.3rem;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    transition: ease-in 0.3s;
+  
+    &:hover {
+      color: $textColor;
+      background-color: $primaryColor;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+}
+
+//post
+.post {
+
+  h1, h2, h3 {
+    color: $textColor2;
+    padding: 2rem 7rem 2rem 7rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding: 1rem 7rem 0rem 7rem;
+  }
+}
