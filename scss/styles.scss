@@ -1,14 +1,11 @@
+// ======================================
+// Bootstrap Imports
+// ======================================
+@import "./_variables";
 
-
-
-
-$primaryColor: #006666;
-$secondaryColor: #00cccc;
-$textColor: #fff;
-$textColor2: #363839;
-$myFont: 'Nanum Gothic', sans-serif;
-
-
+// ======================================
+// Additional Styles
+// ======================================
 body {
   color: $textColor;
   font-family: $myFont;
@@ -147,11 +144,11 @@ h1, h2, h3 {
   margin: 0rem 0rem 1.5rem 1.5rem;
   a {
     font-family: $myFont;
-    color: $textColor;
+    color: $secondaryColor;
     border: 2px solid $primaryColor;
     border-radius: 0.3rem;
     padding: 0.7rem 1.2rem 0.7rem 1.2rem;
-    transition: ease-in 0.3s;
+    transition: all 0.2s;
   
     &:hover {
       color: $textColor;
