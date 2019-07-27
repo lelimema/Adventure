@@ -37,11 +37,37 @@
 @import "../src/bootstrap4/scss/_carousel";
 @import "../src/bootstrap4/scss/_utilities";
 @import "../src/bootstrap4/scss/_print";
-
 // ======================================
 // Additional Styles
 // ======================================
-html {
+
+// Sass Breakpoint Mixin
+@mixin breakpoint($point, $value: 0) {
+  @if $point == mobile {
+		@media (min-width: 320px) and (max-width: 479px) { @content; }
+	}
+
+	@else if $point == tablet {
+		@media (min-width: 480px) and (max-width: 1279px) { @content; }
+	}
+
+	@else if $point == desktop {
+		@media (min-width: 1280px){ @content; }
+	}
+
+	@else {
+		@media ($point: $value) { @content; }
+	}
+}
+
+@mixin between-breakpoints($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+
+body {
   color: $lightText;
   font-family: $myFont;
   font-weight: 100;
@@ -50,10 +76,10 @@ html {
   a {
     color: $linkColor;
     transition: all 0.2s;
-      &:hover {
-        text-decoration: none;
-        opacity: 0.8;
-      }
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
   }
 
   h1, h2, h3 {
@@ -62,22 +88,46 @@ html {
     color: $lightText;
   }
 
+  h1 {
+    font-size: 3rem;
+    @include breakpoint(tablet) {
+      font-size: 3rem;
+      word-spacing: 1.5rem;
+    }
+    @include breakpoint(desktop) {
+      font-size: 3rem;
+      word-spacing: 1.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    @include breakpoint(tablet) {
+      font-size: 2.5rem;
+    }
+    @include breakpoint(desktop) {
+      font-size: 2.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
   p {
+    color: $darkText;
     font-size: 1.2rem;
   }
 }
 
 // main container
 .main-container {
-  color: $lightText;
   position: relative;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-
   &::after {
     content: '';
-    //background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(8).jpg');
     background-image: url('/dist/img/image01.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -94,15 +144,12 @@ html {
 
 // main container
 .berat-container {
-  color: $lightText;
   position: relative;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-
   &::after {
     content: '';
-    //background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(8).jpg');
     background-image: url('/dist/img/image02.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -118,12 +165,12 @@ html {
 }
 
 // navigation bar
+
 .navbar {
   font-weight: 100;
   height: 4rem;
   align-items: center;
   background-color: rgba($primaryColor, 0.5);
-
   &::after {
     content: '';
     background-color: $primaryColor;
@@ -131,21 +178,52 @@ html {
   }
 
   a {
-    font-family: $myFont;
-    font-size: 1.2rem;
     color: $lightText;
-    padding: 0rem 1.5rem 0rem 1.5rem;
-
-    &:hover {
-      color: $lightText;
-      opacity: 0.8;
-      text-decoration: none;
-    }
+    padding: 0rem 0.5rem 0rem 0.5rem;
+      @include breakpoint(tablet) {
+        font-size: 1.2rem;
+        padding: 0rem 1.5rem 0rem 1.5rem;
+          &:hover {
+            color: $lightText;
+            opacity: 0.8;
+            text-decoration: none;
+          }
+      }
+      @include breakpoint(desktop) {
+        font-size: 1.2rem;
+        padding: 0rem 1.5rem 0rem 1.5rem;
+          &:hover {
+            color: $lightText;
+            opacity: 0.8;
+            text-decoration: none;
+          }
+      }
   }
 
-  .fa-search {
-    padding: 0rem 1rem 0rem 0rem;
+  .menu-mobile {
+    display: unset;
+      @include breakpoint(tablet) {
+        display: none;
+      }
+      @include breakpoint(desktop) {
+        display: none;
+      }
   }
+
+  .search {
+    display: none;
+      @include breakpoint(tablet) {
+        display: unset;
+      }
+      @include breakpoint(desktop) {
+        display: unset;
+      }
+      .fa-search {
+        padding: 0rem 1rem 0rem 0rem;
+      }
+  }
+
+
 }
 
 // title
@@ -156,72 +234,91 @@ html {
   height: 600px;
   justify-content: center;
   flex-direction: column;
-
-  h1 {
-    font-size: 3rem;
-    word-spacing: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
+    @include breakpoint(tablet) {
+      
+    }
+    @include breakpoint(desktop) {
+      
+    }
 }
 
 .social {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 600px;
+  text-align: center;
+    @include breakpoint(tablet) {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 600px;
+    }
+    @include breakpoint(desktop) {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 600px;
+    }
+
+    li {
+      text-decoration: none;
+      display: inline-flex;
+    }
 
   a {
     color: $lightText;
     font-size: 2rem;
-
-    &:hover {
-      color: $primaryColor;
-    }
-  }
-
-  li {
-    text-decoration: none;
-    display: block;
+    padding: 1rem 2rem 1rem 0rem;
+      @include breakpoint(tablet) {
+        padding: auto;
+      }
+      @include breakpoint(desktop) {
+        padding: auto;
+      }
   }
 }
 
 // left post
 .left-post {
-  margin: 0rem 0rem 1.5rem 1.5rem;
-    p {
-      font-size: 1rem;
+  text-align: center;
+    @include breakpoint(tablet) {
+      margin: 0rem 0rem 1.5rem 1.5rem;
+      text-align: left;
     }
-  /*a {
-    font-family: $myFont;
-    color: $linkColor;
-    border: 2px solid $linkColor;
-    border-radius: 0.3rem;
-    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
-    transition: ease-in 0.2s;
-  
-    &:hover {
-      color: $lightText;
-      background-color: $primaryColor;
-      border: 2px solid $primaryColor;
-      opacity: 0.8;
-      text-decoration: none;
+    @include breakpoint(desktop) {
+      margin: 0rem 0rem 1.5rem 1.5rem;
+      text-align: left;
     }
-  }*/
+
+  p {
+    color: $lightText;
+    font-size: 1rem;
+  }
 }
 
-//post
+// post
 .post {
 
   h1, h2, h3 {
     text-align: center;
     color: $darkText;
-    padding: 2rem 7rem 2rem 7rem;
+    padding: 2rem 1rem 1rem 1rem;
+
+    @include breakpoint(tablet) {
+      padding: 2rem 1rem 0rem 1rem;
+    }
+  
+    @include breakpoint(desktop) {
+      padding: 2rem 7rem 2rem 7rem;
+    }
+
   }
 
   p {
-    padding: 1rem 7rem 0rem 7rem;
+    padding: 1rem 1rem 0rem 1rem;
+
+      @include breakpoint(tablet) {
+        padding: 1rem 1rem 0rem 1rem;
+      }
+      @include breakpoint(desktop) {
+        padding: 1rem 7rem 0rem 7rem;
+      }
   }
 }
