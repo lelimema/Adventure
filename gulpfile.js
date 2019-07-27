@@ -10,6 +10,28 @@ gulp.task('copyHtml', function (){
         .pipe(gulp.dest('dist'));
 });
 
+// Run:
+// gulp copy-assets.
+// Copy all needed dependency assets files into theme root.
+gulp.task( 'copy-assets', function() {
+
+    // Bootstrap 4
+    var stream = gulp.src('./node_modules/bootstrap/dist/js/**/*.js' )
+        .pipe( gulp.dest('./src/bootstrap4/js' ) );
+    var stream = gulp.src('./node_modules/bootstrap/scss/**/*.scss' )
+        .pipe( gulp.dest('./src/bootstrap4/scss' ) );
+
+    // fullPage.js
+    var stream = gulp.src('./node_modules/fullpage.js/dist/**/*.js' )
+        .pipe( gulp.dest('./src/fullpage.js/js' ) );
+    var stream = gulp.src('./node_modules/fullpage.js/**/*.css' )
+        .pipe( gulp.dest('./src/fullpage.js/css' ) );
+
+    return stream;
+
+});
+
+
 // gulp sass
 gulp.task('sass', function () {
     return gulp.src('scss/**/*.scss')
@@ -45,4 +67,4 @@ gulp.task('watch', function () {
 });
 
 // gulp default
-//gulp.task('default', gulp.parallel(['copyHtml', 'sass', 'scripts', 'imageMin']));
+gulp.task('default', gulp.parallel(['copyHtml', 'sass', 'scripts', 'imageMin']));

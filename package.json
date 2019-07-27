@@ -17,6 +17,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "fullpage.js": "^3.0.7"
   }
 }
