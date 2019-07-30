@@ -26,11 +26,8 @@ gulp.task( 'copy-assets', function() {
         .pipe( gulp.dest('./src/fullpage.js/js' ) );
     var stream = gulp.src('./node_modules/fullpage.js/**/*.css' )
         .pipe( gulp.dest('./src/fullpage.js/css' ) );
-
     return stream;
-
 });
-
 
 // gulp sass
 gulp.task('sass', function () {
