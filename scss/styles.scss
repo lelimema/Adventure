@@ -252,7 +252,7 @@ body {
   text-align: center;
   display: flex;
   align-items: center;
-  height: 600px;
+  height: 37rem;
   justify-content: center;
   flex-direction: column;
 
@@ -268,13 +268,13 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 600px;
+    height: 37rem;
   }
   @include breakpoint(desktop) {
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 600px;
+    height: 37rem;
   }
 
   li {
