@@ -49,13 +49,14 @@ gulp.task('scripts', function(){
 // minify images
 gulp.task('imageMin', () =>
     gulp.src('img/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
 );
 
 // gulp watch
-// Starts watcher. Watcher runs gulp sass task on changes
+// watcher runs gulp sass task on changes
 gulp.task('watch', function () {
+
     // watch sass file
     gulp.watch('./scss/**/*.scss', gulp.series('sass'));
 
@@ -64,4 +65,4 @@ gulp.task('watch', function () {
 });
 
 // gulp default
-gulp.task('default', gulp.parallel(['copyHtml', 'sass', 'scripts', 'imageMin']));
+gulp.task('default', gulp.parallel(['copy-assets', 'copyHtml', 'sass', 'scripts', 'imageMin']));
