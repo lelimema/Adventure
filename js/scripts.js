@@ -1,5 +1,7 @@
-console.log('Message One');
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
 
-console.log('Message Two');
-
-console.log('Message 6');
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
