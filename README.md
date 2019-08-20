@@ -1,2 +1,2 @@
-#Adventure Site
-Visit Berat
+# Adventure - Travel & Tourism Website
+#Visit Berat
