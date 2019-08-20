@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Adventure</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="../dist/css/styles.css" type="text/css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container-fluid main-container">
+        <!-- navigation bar -->
+        <div class="row navbar">
+            <div class="col-12 col-md-10">
+                <!-- menu mobile -->
+                <div class="menu-mobile">
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <a href="index.html">Home</a>
+                            <a href="berat.html">About</a>
+                            <a href="#">Your Trip</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                    <span class="openbtn" onclick="openNav()"><i class="fa fa-bars"></i></span>
+                </div>
+                <!-- menu desktop -->
+                <div class="menu-desktop">
+                    <a href="index.html">Home</a>
+                    <a href="berat.html">About</a>
+                    <a href="#">Your Trip</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <!-- search menu -->
+            <div class="col-12 col-md-2 search">
+                <a href="#"><i class="fa fa-search"></i>Hotels</a>
+            </div>
+        </div>
+        <!-- title section -->
+        <div class="row">
+            <!-- title -->
+            <div class="col-12 col-md-11 my-title">
+                <h1>Explore discover travel</h1>
+            </div>
+            <!-- social network icons-->
+            <div class="col-12 col-md-1 social">
+                <ul>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- left post -->
+        <div class="row">
+            <div class="col-12 col-md-6 left-post">
+                <h2>Visit Berat</h2>
+                <p>This 2413 years old city, the pride of Albanian architecture which is under the protection of UNESCO, is located 120 km from Tirana. The city forms a wonderful combinations of eastern and western cultures, costumes, traditions and outlook. Berat is a treasure-trove of Albanian history, culture and testament to the country's tradition of religious harmony. <a href="berat.html">Read more</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script type="text/javascript" src="./dist/js/main.js"></script>
+</body>
+</html>
